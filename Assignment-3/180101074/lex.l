@@ -1,4 +1,4 @@
-/*Declarations section start here*/
+
 
 /* Auxiliary declarations start here*/
 %{
@@ -71,9 +71,7 @@ int 	{digit}+
 
 %%
 
-/* Rules section ends here*/
 
-/* Auxiliary functions starts here*/
 
 
 int yywrap()
@@ -111,10 +109,12 @@ void lex_error(string msg)
 {
   cout << msg <<endl;
 }
-/* Auxiliary functions ends here*/
 
 
-/* Main function to perform testing of Lexical Analyzer*/ 
+
+
+
+
 int main()
 {	
 	int i;
@@ -126,13 +126,7 @@ int main()
 		switch(i)
 		{
 
-			case ID_token:
-			{
-				cout << "| " << setw(17) << token_name[i] << " ";
-				cout << "| " << setw(16) << i << " ";
-				cout << "| " << setw(19)  << yylval << " |" << endl;
-				break;
-			}
+			
 			case INT_CONST_token:
 			{
 				cout << "| " << setw(17) << token_name[i] << " ";
@@ -145,6 +139,13 @@ int main()
 				cout << "| " << setw(17) << token_name[i] << " ";
 				cout << "| " << setw(16) << i << " ";
 				cout << "| " << setw(21) << " |" << endl;
+				break;
+			}
+			case ID_token:
+			{
+				cout << "| " << setw(17) << token_name[i] << " ";
+				cout << "| " << setw(16) << i << " ";
+				cout << "| " << setw(19)  << yylval << " |" << endl;
 				break;
 			}
 		}
